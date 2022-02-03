@@ -1,0 +1,70 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ section.settings.card_image | image_url: width: 500 }}" alt="{{section.settings.card_image.alt}}">
+  <div class="card-body">
+    <h3>{{section.settings.custom_text_title}}</h3>
+    <p>{{section.settings.custom_text_body}}</p>
+    <a href= "{{section.settings.custom_link_button}}"class= "custom_link_button btn btn-primary">{{section.settings.custom_text_button}}</a>
+
+  </div>
+</div>
+<style>
+  .card .btn {
+    background-color : {{ section.settings.btn-color}}
+  }
+</style>  
+{% schema %}
+{
+    "name": "Bootstrap Card",
+    "tag": "section",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+            "type": "color",
+            "id": "btn-color",
+            "label": "button Color",
+            "default": "#3b4d28"
+        },
+	    {
+            "type": "text",
+            "id": "custom_text_title",
+            "label": "Title",
+            "default": "Welcome"
+        },
+	    {
+            "type": "textarea",
+            "id": "custom_text_body",
+            "label": "Content",
+            "default": "Welcome to the store"
+        },
+		{
+            "type": "url",
+            "id": "custom_link_buttom",
+            "label": "Button Link"
+        },
+		{
+            "type": "text",
+            "id": "custom_text_button",
+            "label": "Button",
+			"default": "Link"
+        }
+
+
+		
+    ],
+    "presets": [{
+        "name": "Bootstrap Card",
+        "category": "Custom"
+    }]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
