@@ -1,0 +1,142 @@
+<!-- *********Create a customizable cads section ********* -->
+
+<div class="card-deck row">
+  {%comment%}
+  class= col-sm-4: set the columms and size for each card
+  {%endcomment%}
+   <div class=" col-sm-4" >
+       <div id="custom_card"class="card" >
+          <img src="{{ section.settings.card_image | image_url }}" class="card-img-top" alt="{{section.settings.card_image.alt}}">
+          <div class="card-body">
+            <h5 class="card-title">{{section.settings.custom_text_title}}</h5>
+            <p class="cart-text">{{section.settings.custom_text_body}}</p>
+            <p class="card-text"><small class="text-muted">{{section.settings.custom_text_body_small}}</small></p>
+          </div>
+       </div>
+   </div>
+   <div class="col-sm-4">
+       <div id="custom_card"class="card " >
+          <img src="{{ section.settings.card_image2 | image_url  }}" class="card-img-top" alt="{{section.settings.card_image2.alt}}">
+          <div class="card-body">
+            <h5 class="card-title">{{section.settings.custom_text_title2}}</h5>
+            <p class="cart-text">{{section.settings.custom_text_body2}}</p>
+            <p class="card-text"><small class="text-muted">{{section.settings.custom_text_body_small2}}</small></p>
+          </div>
+      </div>
+   </div>
+   <div class="col-sm-4">
+      <div id="custom_card"class="card ">
+          <img src="{{ section.settings.card_image3 | image_url  }}" class="card-img-top" alt="{{section.settings.card_image3.alt}}">
+          <div class="card-body">
+            <h5 class="card-title">{{section.settings.custom_text_title3}}</h5>
+            <p class="cart-text">{{section.settings.custom_text_body3}}</p>
+            <p class="card-text"><small class="text-muted">{{section.settings.custom_text_body_small3}}</small></p>
+          </div>
+      </div>
+   </div>
+ 
+</div>
+
+{%comment%}
+Customizable input to edit in the theme live
+{%endcomment%}
+
+{% schema %}
+
+{
+   "name": "bootstrap card",
+    "tag": "section",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image one"
+        },
+	    {
+            "type": "text",
+            "id": "custom_text_title",
+            "label": "Card Title one",
+            "default": "cake name"
+        },
+	    {
+            "type": "textarea",
+            "id": "custom_text_body",
+            "label": "Card Content one",
+            "default": "cake explanation"
+        },
+        {
+            "type": "textarea",
+            "id": "custom_text_body_small",
+            "label": "Card small text",
+            "default": "Gluten free option available"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image2",
+          "label": "Card Image two"
+        },
+	    {
+            "type": "text",
+            "id": "custom_text_title2",
+            "label": "Card Title two",
+            "default": "cake name"
+        },
+	    {
+            "type": "textarea",
+            "id": "custom_text_body2",
+            "label": "Card Content two",
+            "default": "cake explanation"
+        },
+        {
+            "type": "textarea",
+            "id": "custom_text_body_small2",
+            "label": "Card small text two",
+            "default": "Gluten free option available"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image3",
+          "label": "Card Image three"
+        },
+	    {
+            "type": "text",
+            "id": "custom_text_title3",
+            "label": "Card Title three",
+            "default": "cake name"
+        },
+	    {
+            "type": "textarea",
+            "id": "custom_text_body3",
+            "label": "Card Content three",
+            "default": "cake explanation"
+        },
+        {
+            "type": "textarea",
+            "id": "custom_text_body_small3",
+            "label": "Card small text three",
+            "default": "Gluten free option available"
+        }
+
+
+    ],
+
+
+
+
+    "presets": [{
+        "name": "Bootstrap Card",
+        "category": "Custom"
+    }]
+}
+
+
+
+
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,89 @@
+<div class="card-deck">
+  <div id="custom_card"class="card" style="width: 18rem;">
+    <img src="{{ section.settings.card_image | image_url  }}" class="card-img-top" alt="{{section.settings.card_image.alt}}">
+    <div class="card-body">
+      <h5 class="card-title">{{section.settings.custom_text_title}}</h5>
+      <p class="cart-text">{{section.settings.custom_text_body}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card"style="width: 18rem;">
+    <img src="{{ section.settings.card_image | image_url  }}" class="card-img-top" alt="{{section.settings.card_image.alt}}">
+    <div class="card-body">
+      <h5 class="card-title">{{section.settings.custom_text_title}}</h5>
+      <p class="cart-text">{{section.settings.custom_text_body}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card"style="width: 18rem;">
+    <img src="{{ section.settings.card_image | image_url  }}" class="card-img-top" alt="{{section.settings.card_image.alt}}">
+    <div class="card-body">
+      <h5 class="card-title">{{section.settings.custom_text_title}}</h5>
+      <p class="cart-text">{{section.settings.custom_text_body}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+
+{
+   "name": "bootstrap card",
+    "tag": "section",
+    "settings": [
+		{
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+	    {
+            "type": "text",
+            "id": "custom_text_title",
+            "label": "Title",
+            "default": "Welcome"
+        },
+	    {
+            "type": "textarea",
+            "id": "custom_text_body",
+            "label": "Content",
+            "default": "Welcome to the store"
+        }
+
+    ],
+
+
+"blocks": [
+     {
+       "name": "Card",
+       "type": "section",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "custom_card",
+           "label": "custom card"
+         }
+       ]
+
+    
+     }
+  ],
+
+    "presets": [{
+        "name": "Bootstrap Card",
+        "category": "Custom"
+    }]
+}
+
+
+
+
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

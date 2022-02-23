@@ -1,0 +1,81 @@
+<!-- *********To create a customizable GDPR (Cookie) banner ********* -->
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>{{section.settings.custom_text_title}}</strong>
+     {{section.settings.custom_text_body}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <a href= "https://allaboutdnt.com/"class= "custom_link_button btn btn-danger">{{section.settings.custom_text_button}}</a>
+</div>
+<style>
+.alert {
+        background : {{ section.settings.background-color }};
+          color:{{ section.settings.font-color }};
+    }
+.btn {
+    background-color : {{ section.settings.btn-color}}  
+</style>  
+
+{%comment%}
+Customizable input to edit in the theme live
+{%endcomment%}
+{% schema %}
+{
+    "name": "Custom Banner",
+    "tag": "section",
+    "class": "index-section--flush",
+    "settings": [{
+            "id": "custom_text_title",
+            "type": "text",
+            "label": "Banner Title",
+            "default": "Cookies and Language Preferences"
+        },
+        {
+            "id": "custom_text_body",
+            "type": "richtext",
+            "label": "Banner Text",
+            "default": "<p>Add your text here</p>"
+        },
+        {
+            "type": "color",
+            "id": "background-color",
+            "label": "Background Color",
+            "default": "#f5f5f5"
+        },
+        {
+            "type": "color",
+            "id": "font-color",
+            "label": "Font Color",
+            "default": "#6d73b0"
+        },
+
+
+       
+       {
+            "type": "color",
+            "id": "btn-color",
+            "label": "button Color",
+            "default": "#ea3546"
+        },
+	
+		{
+            "type": "text",
+            "id": "custom_text_button",
+            "label": "Button",
+			"default": "Decline"
+        }
+
+
+
+
+
+    ],
+    "presets": [{
+        "name": "Custom Banner",
+        "category": "Custom"
+    }]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
