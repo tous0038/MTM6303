@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts in index.php
+ * post template for index
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -15,21 +15,22 @@
     <div class="text-center">
       <a href="<?php echo get_permalink(); ?>">
         <h1><?php echo get_the_title(); ?></h1>
-        <img class="img-responsive" <?php the_post_thumbnail();?> 
+        <img class="img-responsive" src="<?php echo get_the_post_thumbnail_url() ?>">
+        
         <br>
         <!-- to get the post feature image use the_post_thumbnail-->
         </a> 
     </div> 
 
 	 <p class="section-container-spacer">
-     <?php
-     the_excerpt();
+        <?php
+        the_excerpt();
 
-     wp_link_pages( array(
-        'before' => '<div class="page-links">' . __( 'Pages:', 'mtm6303final' ),
-        'after'  => '</div>',
-     ) );
-     ?>
+        wp_link_pages( array(
+            'before' => '<div class="page-links">' . __( 'Pages:', 'mtm6303final' ),
+            'after'  => '</div>',
+        ) );
+        ?>
 	</p>
 </div>
 

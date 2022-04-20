@@ -24,8 +24,8 @@ get_header(); ?>
               </div>
             </div>
         </div>
-     </div>
- </div>
+    </div>
+</div>
 
  
 <div class="container">
@@ -41,12 +41,6 @@ get_header(); ?>
              endwhile; // End of the loop.
         endif;
         ?>
-      
-        
-
-
-
-
     </div>
 </div>
 <?php get_footer(); ?>

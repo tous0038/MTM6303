@@ -19,7 +19,7 @@ function mtm6303final_setup() {
 	//this theme uses wp_nav_menu() in two locations.
 	register_nav_menus(array(
 		'top' => __('Top Menu', 'mtm6303final'),
-		'socia;' => __('Socia Links Menu', 'mtm6303final' ),
+		'social' => __('Socia Links Menu', 'mtm6303final' ),
 	));
 
 	add_theme_support( 'title-tag' );
@@ -32,14 +32,17 @@ function mtm6303final_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'mtm6303final-featured-image', 2000, 1200, true );
-
+	if(!is_admin()) {
 	// enqueue style
     wp_enqueue_style( 'mtm6303-main-styles', get_theme_file_uri( '/assets/css/main.a3f694c0.css' ), '', '1.0' );
 
+
     //enqueue script
     wp_enqueue_script( 'jquery', get_theme_file_uri( 'js/jquery.js' ), '', '1.0.0', true );
+	}
     
 }
+
 
 function mtm6303_getnav($theme_location="top") {
     $nav_items_return = [];
@@ -69,4 +72,41 @@ function mtm6303_getnav($theme_location="top") {
 
 add_action( 'after_setup_theme', 'mtm6303final_setup' );
 
+function mtm6303final_sidebars()
+{
+	register_sidebar(array(
+		'name'          => 'MTM6303 Sidebar',
+		'id'            => 'mtm6303-sidebar',
+		'description'   => 'Sidebar for all pages',
+		'class'         => '',
+		'before_widget' => '<div id="mtm6303-sidebar" class="widget mtm6303-sidebar">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>',
+	));
+
+	register_sidebar(array(
+		'name'          => 'MTM6303 Address',
+		'id'            => 'mtm6303-sidebar-location',
+		'description'   => 'MTM6303 Address Sidebar for Contact Page',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	));
+}
+
+add_action ('widgets_init', 'mtm6303final_sidebars');
+
+if (!function_exists('mtm6303final_get_dynamic_sidebar')){
+	function mtm6303final_get_dynamic_sidebar($sidebar_id)
+	{
+		ob_start();
+		dynamic_sidebar($sidebar_id);
+		$out = ob_get_contents();
+		ob_end_clean();
+		return $out;
+	}
+}
 ?>

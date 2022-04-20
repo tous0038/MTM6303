@@ -50,7 +50,10 @@
                                 'after'  => '</div>',
                             ) );
                         ?>
+                        
+                        <!-- <?php //do_shortcode("[mtm6303finalplugin]");?> -->
                </div>
+               
             </div>
         </div>
     </div>

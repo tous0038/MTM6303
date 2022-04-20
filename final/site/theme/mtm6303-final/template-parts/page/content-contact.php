@@ -38,9 +38,11 @@
 
 
 <div class="section-container" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="container">
     <div class="text-center">
             <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     </div> 
+    
     <div class="col-xs-12">
         <div class="row">
             <div class="col-md-6">
@@ -58,14 +60,18 @@
                         </form>
                 </div>
             </div>
+            
 
-
-            <!-- <div class="col-md-5 col-md-offset-1">
+            <div class="col-md-5 col-md-offset-1">
                     
                 <h3>Head Office</h3>
                 
                 <div>
-                    <p>1385 Woodroffe Ave<br/>Nepean, ON K2G</p>
+                    <address>
+                        <p>
+                            <?php echo mtm6303final_get_dynamic_sidebar('mtm6303-sidebar-location'); ?>
+                        </p>
+                    </address>
                 </div>
                 <div>
                     <p>contact@mybusiness.com<br>+331 45 31 64 32</p>
@@ -73,7 +79,7 @@
 
                 <div class="mapouter">
                     <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
-                        src="https://maps.google.com/maps?q=Algonquin%20college%20Campus&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        src="https://maps.google.com/maps?q=<?php echo urlencode(strip_tags(mtm6303final_get_dynamic_sidebar ('mtm6303-sidebar-location'))) ?>&t=&z=13&ie=UTF8&iwloc=&output=embed"
                         frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
                     <style>
                         .mapouter {
@@ -98,10 +104,13 @@
                 <div>
                     <p>To apply for a job with our team, please feel free to send us your Linkedin profile link
                         ou CV to : employment@mybusiness.com</p>
-                </div>
-            </div> -->
+                </div>  
+            </div>  
+            
         </div>
     </div>
+    </div>
+    
 
 </div>
 
